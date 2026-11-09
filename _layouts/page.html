@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article class="entry narrow">
+  <header class="post-head"><h1>{{ page.title }}</h1></header>
+  {% if page.cover %}<div class="post-banner"><img src="{{ page.cover | relative_url }}" alt=""></div>{% endif %}
+  <div class="prose">
+    {% capture img_src %}src="{{ site.baseurl }}/assets/{% endcapture %}{{ content | replace: 'src="/assets/', img_src }}
+  </div>
+</article>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="entry narrow">
+  <a class="back" href="{{ '/thoughts/' | relative_url }}">← back to all thoughts</a>
+  <header class="post-head">
+    <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+    <h1>{{ page.title }}</h1>
+  </header>
+  {% if page.cover %}<div class="post-banner"><img src="{{ page.cover | relative_url }}" alt=""></div>{% endif %}
+  <div class="prose">
+    {% capture img_src %}src="{{ site.baseurl }}/assets/{% endcapture %}{{ content | replace: 'src="/assets/', img_src }}
+  </div>
+  {% if page.tags.size > 0 %}
+  <footer class="entry-foot">{% for t in page.tags %}<span class="hash">#{{ t }}</span>{% endfor %}</footer>
+  {% endif %}
+</article>

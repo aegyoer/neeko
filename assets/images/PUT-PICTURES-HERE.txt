@@ -1,0 +1,2 @@
+Upload your pictures into this folder (Add file -> Upload files on GitHub).
+Then use them in a review like:  cover: /assets/images/your-picture.jpg

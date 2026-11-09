@@ -1,0 +1,55 @@
+# ── Your site settings ─────────────────────────────
+title: "Neeko"
+greeting: "hi, welcome to my little corner ✿"
+tagline: "Notes on the books, games, films, shows, anime and music I spend my time with."
+description: "Reviews and thoughts on media."
+author: "yuffie"
+
+# ── Password screen ────────────────────────────────
+# The default password is:  changeme
+# To change it, open tools/make-password.html on your computer (double-click it),
+# type your new password, and paste the code it gives you here.
+# Delete the password_hash line to turn the password screen off.
+password_hash: "057ba03d6c44104863dc7361fe4578965d1887360f90a0895882e58a6248fc86"
+
+# The repo is named "neeko", so the site lives at yourusername.github.io/neeko
+# If you ever rename the repo, change this to match (e.g. "/newname").
+baseurl: "/neeko"
+url: ""
+
+# ── Media types (filter buttons, colours and emoji) ──
+media_types:
+  - id: book
+    label: Books
+    emoji: "📚"
+  - id: game
+    label: Games
+    emoji: "🎮"
+  - id: movie
+    label: Movies
+    emoji: "🎬"
+  - id: show
+    label: Shows
+    emoji: "📺"
+  - id: anime
+    label: Anime
+    emoji: "🌸"
+  - id: music
+    label: Music
+    emoji: "🎧"
+
+# ── Plumbing (you can ignore this) ─────────────────
+collections:
+  reviews:
+    output: true
+    permalink: /reviews/:name/
+
+defaults:
+  - scope: { path: "", type: reviews }
+    values: { layout: review }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+permalink: /thoughts/:year/:title/
+markdown: kramdown
+exclude: [README.md, HOW-TO.md, REVIEW_TEMPLATE.md, Gemfile, Gemfile.lock, tools]

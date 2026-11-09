@@ -1,0 +1,1 @@
+{% assign r = include.rating | times: 1.0 %}<span class="stars" aria-label="{{ include.rating }} out of 5">{% for i in (1..5) %}{% assign half = i | minus: 0.5 %}{% if r >= i %}<span class="s full">★</span>{% elsif r >= half %}<span class="s half">★</span>{% else %}<span class="s empty">★</span>{% endif %}{% endfor %}</span>

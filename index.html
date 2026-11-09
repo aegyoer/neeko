@@ -1,0 +1,77 @@
+---
+layout: default
+title:
+---
+<section class="hero">
+  <p class="hello">{{ site.greeting }}</p>
+  <h1>{{ site.tagline }}</h1>
+</section>
+
+{% assign now = site.reviews | where_exp: "r", "r.status" %}
+{% if now.size > 0 %}
+<section class="now">
+  <h2 class="section-title"><span class="dot"></span>Currently into</h2>
+  <div class="now-row">
+    {% for r in now %}
+    <a class="now-card" href="{{ r.url | relative_url }}">
+      <span class="now-cover">{% include cover.html item=r %}</span>
+      <span class="now-text">
+        <span class="now-status">{{ r.status }}</span>
+        <span class="now-title">{{ r.title }}</span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<div class="filters" role="group" aria-label="Filter by media type">
+  <button class="chip is-on" data-filter="all">✨ All <em>{{ site.reviews | size }}</em></button>
+  {% for t in site.media_types %}
+    {% assign n = site.reviews | where: "type", t.id | size %}
+    {% if n > 0 %}
+    <button class="chip chip-{{ t.id }}" data-filter="{{ t.id }}">{{ t.emoji }} {{ t.label }} <em>{{ n }}</em></button>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% assign reviews = site.reviews | sort: "date" | reverse %}
+<ul class="grid">
+  {% for r in reviews %}
+  {% assign type = site.media_types | where: "id", r.type | first %}
+  <li class="card" data-type="{{ r.type }}">
+    <a href="{{ r.url | relative_url }}">
+      <span class="card-cover">
+        {% include cover.html item=r %}
+        <span class="pill pill-{{ r.type }}">{{ type.emoji }} {{ type.label | default: r.type }}</span>
+      </span>
+      <span class="card-body">
+        {% if r.rating %}{% include stars.html rating=r.rating %}{% endif %}
+        <span class="card-title">{{ r.title }}</span>
+        <span class="card-meta">{% if r.creator %}{{ r.creator }}{% endif %}{% if r.year %} · {{ r.year }}{% endif %}</span>
+        {% if r.verdict %}<span class="card-verdict">{{ r.verdict }}</span>{% endif %}
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<p class="empty" hidden>Nothing here yet!</p>
+
+<script>
+  (function () {
+    var chips = document.querySelectorAll('.chip');
+    var cards = document.querySelectorAll('.card');
+    function apply(f) {
+      chips.forEach(function (c) { c.classList.toggle('is-on', c.dataset.filter === f); });
+      cards.forEach(function (r) { r.hidden = !(f === 'all' || r.dataset.type === f); });
+    }
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        apply(c.dataset.filter);
+        history.replaceState(null, '', c.dataset.filter === 'all' ? location.pathname : '#' + c.dataset.filter);
+      });
+    });
+    var h = location.hash.slice(1);
+    if (h && document.querySelector('.chip[data-filter="' + h + '"]')) apply(h);
+  })();
+</script>

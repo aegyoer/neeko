@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{% assign type = site.media_types | where: "id", page.type | first %}
+<article class="entry">
+  <a class="back" href="{{ '/' | relative_url }}">← back to all reviews</a>
+
+  <header class="review-head review-{{ page.type }}">
+    <div class="hero-cover">{% include cover.html item=page %}</div>
+    <div class="review-info">
+      <span class="pill pill-{{ page.type }}">{{ type.emoji }} {{ type.label | default: page.type }}</span>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+      <p class="review-meta">
+        {% if page.creator %}<span>{{ page.creator }}</span>{% endif %}
+        {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+        {% if page.status %}<span class="status">● {{ page.status }}</span>{% endif %}
+      </p>
+      {% if page.rating %}<div class="big-stars">{% include stars.html rating=page.rating %}<span class="score">{{ page.rating }}/5</span></div>{% endif %}
+      {% if page.verdict %}<p class="verdict">“{{ page.verdict }}”</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="prose">
+    {% capture img_src %}src="{{ site.baseurl }}/assets/{% endcapture %}{{ content | replace: 'src="/assets/', img_src }}
+  </div>
+
+  {% if page.gallery %}
+  <section class="gallery-wrap">
+    <h2 class="section-title"><span class="dot"></span>Pictures</h2>
+    <div class="gallery">
+      {% for g in page.gallery %}
+        {% if g.image %}{% assign src = g.image %}{% assign cap = g.caption %}{% else %}{% assign src = g %}{% assign cap = "" %}{% endif %}
+        <figure>
+          <img src="{{ src | relative_url }}" alt="{{ cap | default: page.title }}" data-caption="{{ cap }}" loading="lazy">
+          {% if cap and cap != "" %}<figcaption>{{ cap }}</figcaption>{% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <footer class="entry-foot">
+    <span>{{ page.date | date: "%B %-d, %Y" }} · by @{{ page.author | default: site.author }}</span>
+    {% for t in page.tags %}<span class="hash">#{{ t }}</span>{% endfor %}
+  </footer>
+</article>

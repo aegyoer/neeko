@@ -1,0 +1,24 @@
+---
+layout: default
+title: Thoughts
+---
+<section class="hero">
+  <p class="hello">the rambly bits ✎</p>
+  <h1>Thoughts</h1>
+  <p class="sub">Longer rambles, lists, and things that aren't quite reviews.</p>
+</section>
+
+<ul class="posts">
+  {% for p in site.posts %}
+  <li>
+    <a class="post-card" href="{{ p.url | relative_url }}">
+      {% if p.cover %}<span class="post-thumb"><img src="{{ p.cover | relative_url }}" alt="" loading="lazy"></span>{% endif %}
+      <span class="post-text">
+        <span class="post-date">{{ p.date | date: "%b %-d, %Y" }}</span>
+        <span class="post-title">{{ p.title }}</span>
+        <span class="post-excerpt">{{ p.excerpt | strip_html | truncate: 150 }}</span>
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

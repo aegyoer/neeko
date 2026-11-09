@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✿</text></svg>">
+  {% if site.password_hash %}
+  <script>
+    // Hide the page until the right password has been entered on this device.
+    (function () {
+      var want = "{{ site.password_hash }}", have = null;
+      try { have = localStorage.getItem("ml-key"); } catch (e) {}
+      if (have !== want) document.documentElement.classList.add("locked");
+    })();
+  </script>
+  {% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  {% if site.password_hash %}
+  <div class="gate" role="dialog" aria-labelledby="gate-title">
+    <form class="gate-card" id="gate-form">
+      <div class="gate-emoji" aria-hidden="true">🔒</div>
+      <h1 id="gate-title">{{ site.title }}</h1>
+      <p>This little corner is private. What's the password?</p>
+      <input type="password" id="gate-pw" autocomplete="current-password" placeholder="password" required autofocus>
+      <button type="submit">Let me in ♡</button>
+      <p class="gate-err" id="gate-err" hidden>Hmm, that's not it. Try again?</p>
+    </form>
+  </div>
+  <script>
+    (function () {
+      var want = "{{ site.password_hash }}";
+      var form = document.getElementById("gate-form");
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var pw = document.getElementById("gate-pw").value;
+        var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pw));
+        var hex = Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+        if (hex === want) {
+          try { localStorage.setItem("ml-key", hex); } catch (e) {}
+          document.documentElement.classList.remove("locked");
+        } else {
+          var err = document.getElementById("gate-err");
+          err.hidden = false;
+          form.classList.remove("shake"); void form.offsetWidth; form.classList.add("shake");
+        }
+      });
+    })();
+  </script>
+  {% endif %}
+
+  <div class="site">
+    <header class="masthead">
+      <a class="logo" href="{{ '/' | relative_url }}"><span class="logo-mark">✿</span>{{ site.title }}</a>
+      <nav>
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.collection == 'reviews' %}aria-current="page"{% endif %}>Reviews</a>
+        <a href="{{ '/thoughts/' | relative_url }}" {% if page.url contains '/thoughts' %}aria-current="page"{% endif %}>Thoughts</a>
+        <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="footer">
+      <span>made with ♡ by {{ site.author }}</span>
+      <span>{{ site.reviews | size }} reviews · {{ site.posts | size }} thoughts</span>
+      {% if site.password_hash %}<button class="lock-btn" type="button" onclick="try{localStorage.removeItem('ml-key')}catch(e){};location.reload()">🔒 lock</button>{% endif %}
+    </footer>
+  </div>
+
+  <dialog class="lightbox" id="lightbox">
+    <form method="dialog"><button class="lb-close" aria-label="Close">×</button></form>
+    <img alt="">
+    <p class="lb-cap"></p>
+  </dialog>
+  <script>
+    // Click any picture in a review (or gallery) to see it bigger.
+    (function () {
+      var lb = document.getElementById("lightbox");
+      if (!lb || !lb.showModal) return;
+      var big = lb.querySelector("img"), cap = lb.querySelector(".lb-cap");
+      document.querySelectorAll(".prose img, .gallery img, .hero-cover img").forEach(function (img) {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", function (e) {
+          e.preventDefault();
+          big.src = img.dataset.full || img.src;
+          big.alt = img.alt;
+          cap.textContent = img.dataset.caption || img.alt || "";
+          lb.showModal();
+        });
+      });
+      lb.addEventListener("click", function (e) { if (e.target === lb) lb.close(); });
+    })();
+  </script>
+</body>
+</html>
