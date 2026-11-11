@@ -372,3 +372,10 @@ html.locked .gate {
 .prose #markdown-toc a:hover { color: var(--accent); }
 .prose h2 { scroll-margin-top: 96px; }
 .lede { font-size: 1.15em; }
+
+/* ─── Gallery inside a review + softer empty stars ─ */
+.prose .gallery { margin: 1.8em 0 .6em; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.prose .gallery img { margin: 0; aspect-ratio: 16 / 10; }
+.prose .gallery figcaption { font-size: .82rem; line-height: 1.4; }
+.gallery-note { font-size: .78rem; color: var(--ink-soft); text-align: right; margin-top: 0; }
+.s.empty { color: color-mix(in srgb, var(--ink-soft) 35%, transparent); }
