@@ -28,6 +28,8 @@ If I had to compress my objection into one thought, it would be this. The series
 
 Any honest case against the show has to begin with what it does well, and there is plenty.
 
+<figure class="slot"><img src="/assets/images/edgerunners/night-city.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
+
 Trigger was at the height of its powers here. Night City is saturated to the point of hallucination, all neon and violent colour contrast, and the camera rarely settles long enough for the eye to rest. Very few anime have produced a city that feels this feverish.
 
 The soundtrack does work the writing should have done. Much of the grief and longing a viewer feels is supplied by the score, since the script seldom gives itself room to earn those emotions, and I suspect the music is the main reason the series feels weightier than its story actually is.
@@ -41,6 +43,8 @@ All of these virtues belong to surface and sensation, though. When I try to imag
 ## Episode 6
 
 One episode deserves separate treatment, because it comes very close to perfection and because its success ends up being the most damaging evidence against the other nine.
+
+<figure class="slot"><img src="/assets/images/edgerunners/maine.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
 
 Episode 6 follows Maine's disintegration, and for twenty-odd minutes every part of the show finally pulls in one direction. The spectacle serves sorrow. The violence frightens instead of thrilling, since we are watching a man we know come apart, and the crew's helplessness is hard to sit through because they love him, depend on him, and can do nothing to stop it. When the score swells, it is underlining something the episode has already built.
 
@@ -72,6 +76,8 @@ Episode 6 renders the collapse brilliantly. The failure comes afterward, when Ma
 
 Cyberware as addiction is the most coherent metaphor in the series and also the one it handles most irresponsibly. Read Edgerunners as a drug narrative and nearly every beat falls into place.
 
+<figure class="slot"><img src="/assets/images/edgerunners/sandevistan.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
+
 David begins the series already escaping through illicit braindance, consuming someone else's experience for the rush, so chrome arrives as a stronger substance more than a new habit. The Sandevistan slows the world and makes him feel invincible, and the animation films it exactly as one would film a high, with colour smearing and sound warping for the few seconds he is untouchable. Tolerance follows. One implant is never enough, every job demands more power, and his body needs more and more help to bear what it already carries. He relies on pills to hold cyberpsychosis at bay and relies on them more as he pushes further, which is the logic of dependency, where a second substance becomes necessary just to function on the first. The ripperdoc supplies him. The crew needs him enhanced. Nobody around him has any reason to make him stop, and Maine's denial is the same pattern a little further down the road. Cyberpsychosis, finally, is the overdose, the point at which the substance consumes the person consuming it.
 
 The economics are where the metaphor becomes truly sharp. In Night City the corporations that manufacture the chrome also profit from those who burn out on it, which mirrors real addiction crises in which companies made fortunes from products they knew to be habit-forming while the cost fell on the poor. A specific critique of capitalism was within reach here, about a system that sells the young the instruments of their own destruction and calls it opportunity. The show gestures toward it and moves on to the next fight.
@@ -83,6 +89,8 @@ Its fatal error is that it glamorises the high. Serious addiction narratives, Re
 ## Capitalism as atmosphere
 
 Capitalism is everywhere in the show, but it has been aestheticised. Corporations are the villains, David's mother is processed by the system like an expired invoice, and his augmented body becomes an asset Arasaka wants to acquire. Every ingredient of a critique is present, and the critique itself never quite arrives.
+
+<figure class="slot"><img src="/assets/images/edgerunners/arasaka-academy.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
 
 Corporate power behaves like weather in Edgerunners, omnipresent and malevolent and never explained. We never see how it operates, never meet a functionary with an inner life, never glimpse solidarity or any kind of alternative. Without mechanism there can be no analysis, only mood, and exploitation turns into a collage of chrome and debt and beautiful young people dying in slow motion.
 
@@ -154,6 +162,8 @@ I don't think Lucy was poorly conceived. The story simply loses interest in her 
 
 The moon functions in Edgerunners much as heaven functions in religion, a promised elsewhere that makes present suffering bearable. It is clean and silent and beyond the city's reach, and like heaven it is for sale. In Night City even transcendence comes with a ticket price.
 
+<figure class="slot"><img src="/assets/images/edgerunners/moon.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
+
 Lucy's attachment to it makes psychological sense. She was shaped by corporate exploitation before she had any say in the matter, and the moon is the one thing that belongs to her. For a traumatised person, a fixed fantasy of escape can work as a survival mechanism, organising chaos into a story that has an ending.
 
 The show could have been profound here. Lucy's dream fits what Lauren Berlant called cruel optimism, an attachment to something that obstructs your flourishing but which you cannot give up because it gives your life its shape. She hoards and plans for the moon while the people around her die, and David dies getting her there.
@@ -222,6 +232,8 @@ Rebecca in particular deserved better, an arc of her own and an inner life and a
 
 Edgerunners treats death the way a music video treats the drop, as the moment everything has been building toward. Bodies burst and limbs spin and blood arcs in candy colours, and the violence is so stylised that it registers as reward more readily than as loss.
 
+<figure class="slot"><img src="/assets/images/edgerunners/adam-smasher.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
+
 That would be defensible if the show were interrogating our appetite for it, but mostly it feeds the appetite. The camera lingers on wounds with the same hunger it brings to bodies elsewhere, and death becomes one more surface to admire.
 
 Rebecca's death is the clearest case. She is killed in the finale in a manner designed to shock, and the scene's emotional purpose is largely to detonate David's final rage. Gail Simone named this pattern "women in refrigerators", female characters harmed or killed chiefly to propel a male hero's arc, and the show's belated, rushed investment in Rebecca only makes the function more conspicuous.
@@ -283,6 +295,8 @@ None of this makes the fans foolish. The show is very good at producing a feelin
 ## Verdict
 
 Edgerunners is a beautiful corpse, immaculate on the surface, assembled from fine parts and cold where a heart should beat. Its craft is undeniable and its ending lingers like tinnitus. It also spends its supporting cast like ammunition, turns a grieving 17-year-old into a weapon and calls that growing up, wears anti-capitalism as a costume, and routes its emotional core through a man saved by wild women whom it films with the acquisitive eye it claims to deplore.
+
+<figure class="slot"><img src="/assets/images/edgerunners/ending.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.parentNode.style.display='none'}"></figure>
 
 Watch it for episode 6, for the music and the motion and the last image on the moon. Afterward, once the tears have dried, it is worth asking how much of the feeling the story built and how much the soundtrack lent you, and why a show about being turned into a product is remembered by so many people chiefly for its products.
 
